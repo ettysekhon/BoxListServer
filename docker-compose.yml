@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  scraper:
+    container_name: scraper
+    build:
+      context: ./scraper
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./files:/var/worker/files
+  importer:
+    container_name: importer
+    depends_on:
+      - dbseeder
+    build:
+      context: ./importer
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./files:/var/worker/files
+  dbseeder:
+    container_name: dbseeder
+    depends_on:
+      - db
+    build:
+      context: ./dbseeder
+      dockerfile: ./Dockerfile
+  db:
+    container_name: rethinkdb-db
+    image: rethinkdb
+    ports:
+      - "8080"
+      - "28015"
+      - "29015"
+    volumes:
+      - ./data:/data

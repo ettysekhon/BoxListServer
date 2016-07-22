@@ -1,0 +1,12 @@
+FROM node:latest
+
+WORKDIR /var/worker
+
+# Install app dependencies
+COPY package.json /var/worker
+RUN npm install
+
+# Copy source
+COPY . /var/worker
+
+CMD ["npm", "start"]
