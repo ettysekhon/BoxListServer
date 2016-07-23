@@ -62,28 +62,26 @@ const extractLinks = (data) => {
 
 const scrape = (nightmare, url, selector, fn) => {
   return new Promise((resolve, reject) => {
-    return (
-      nightmare
-        .goto(url)
-        .type(USERNAME_SELECTOR, USERNAME)
-        .type(PASSWORD_SELECTOR, PASSWORD)
-        .click(BUTTON_SELECTOR)
-        .wait(5000)
-        .evaluate((sel) => {
-          const data = $(sel);
-          if(data) {
-            return data.html();
-          }
-          return reject('Not in page context');
-        }, selector)
-        .run((err, data) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve(fn(data));
-          }
-        })
-      );
+    nightmare
+    .goto(url)
+    .type(USERNAME_SELECTOR, USERNAME)
+    .type(PASSWORD_SELECTOR, PASSWORD)
+    .click(BUTTON_SELECTOR)
+    .wait(5000)
+    .evaluate((sel) => {
+      const data = $(sel);
+      if(data) {
+        return data.html();
+      }
+      return reject('Not in page context');
+    }, selector)
+    .run((err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(fn(data));
+      }
+    });
   });
 };
 

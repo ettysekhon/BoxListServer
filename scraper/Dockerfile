@@ -10,6 +10,6 @@ RUN npm install
 COPY . /var/worker
 
 # Create directory to save data
-RUN mkdir -p /var/worker/data
+RUN mkdir -p /var/worker/files
 
 CMD ["npm", "start"]
