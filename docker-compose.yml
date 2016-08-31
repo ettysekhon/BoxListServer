@@ -1,24 +1,18 @@
 version: '2'
 
 services:
-  importer:
-    container_name: importer
-    depends_on:
-      - dbseeder
-    build:
-      context: ./importer
-      dockerfile: ./Dockerfile
-    volumes:
-      - ./files:/var/worker/files
-  dbseeder:
-    container_name: dbseeder
-    depends_on:
-      - db
-    build:
-      context: ./dbseeder
-      dockerfile: ./Dockerfile
-  db:
-    container_name: rethinkdb-db
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    links:
+      - rdb:rdb
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - nexgen-network
+  rdb:
+    container_name: rdb
     image: rethinkdb
     ports:
       - "8080"
@@ -26,3 +20,9 @@ services:
       - "29015"
     volumes:
       - ./data:/data
+    networks:
+      - nexgen-network
+
+networks:
+  nexgen-network:
+    driver: bridge
