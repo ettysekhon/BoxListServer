@@ -1,13 +1,6 @@
 version: '2'
 
 services:
-  scraper:
-    container_name: scraper
-    build:
-      context: ./scraper
-      dockerfile: ./Dockerfile
-    volumes:
-      - ./files:/var/worker/files
   importer:
     container_name: importer
     depends_on:

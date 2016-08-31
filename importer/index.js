@@ -4,6 +4,7 @@ const fs = require('fs');
 const r = require('rethinkdb');
 const path = require('path');
 const _ = require('lodash');
+const config = require('./config');
 
 const findLatestFile = (match, dirpath) => {
   const matchedFiles = fs.readdirSync(dirpath);
@@ -31,24 +32,24 @@ const deleteFile = (fullPathFile) => {
 const importData = (fullPathFile) => {
   return new Promise((resolve, reject) => {
     console.log('connecting to db');
-    r.connect({host: 'rethinkdb-db', port: 28015}, (err, conn) => {
+    r.connect({host: config.host, port: config.port, db: config.db }, (err, conn) => {
       if (err) {
-        console.log('db connect error', err);
+        console.log('db connect error');
         reject(err);
       }
 
       const connection = conn;
 
       // delete products
-      r.table('products').delete().run(connection, (error, result) => {
+      r.table('product').delete().run(connection, (error) => {
         if (error) {
-          console.log('delete products error', error);
+          console.log('delete products error');
           reject(error);
         }
-        console.log('deleted products', JSON.stringify(result, null, 2));
+        console.log('deleted product data');
       });
 
-      console.log('importing data');
+      console.log('importing data', fullPathFile);
       const products = JSON.parse(fs.readFileSync(fullPathFile, 'utf8'));
       const results =
         products && products.products && products.products.length > 0
@@ -56,12 +57,12 @@ const importData = (fullPathFile) => {
         : false;
 
       // insert products
-      r.table('products').insert(results).run(connection, (error, result) => {
+      r.table('product').insert(results).run(connection, (error) => {
         if (error) {
-          console.log('insert products error', error);
+          console.log('insert products error');
           reject(error);
         }
-        console.log('inserted products', JSON.stringify(result, null, 2));
+        console.log('inserted product data');
         resolve();
       });
     });
@@ -79,17 +80,18 @@ const importLatestFile = () => {
 
   fs.stat(fullPathFile, (err) => {
     if (err) {
-      console.error(err);
+      console.error('fs stat error');
       return;
     }
 
     // import the data
     importData(fullPathFile)
       .then(() => {
+        console.log('successfully imported data');
         deleteFile(fullPathFile);
       })
-      .catch((error) => {
-        console.log('error', error);
+      .catch(() => {
+        console.log('error importing data');
         deleteFile(fullPathFile);
       });
   });
@@ -98,5 +100,5 @@ const importLatestFile = () => {
 
 setInterval(() => {
   importLatestFile();
-}, 1000);
+}, 10000);
 /* eslint-enable no-console */

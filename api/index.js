@@ -31,5 +31,5 @@ app.use((err, req, res) => {
 
 app.listen(port, () => {
   console.log('Starting application on port %d', port);
+  /* eslint-enable no-console */
 });
-/* eslint-enable no-console */

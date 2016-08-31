@@ -1,8 +1,13 @@
 const r = require('rethinkdb');
+const config = require('./config');
 /* eslint-disable no-unused-vars */
 exports.get = (req, res, next) => {
 /* eslint-enable no-unused-vars */
-  r.connect({ host: '188.166.151.40', port: 28015, db: 'boxlist' }, (connErr, conn) => {
+  r.connect({
+    host: config.host,
+    port: config.port,
+    db: config.db
+  }, (connErr, conn) => {
     if (connErr) {
       throw connErr;
     }
