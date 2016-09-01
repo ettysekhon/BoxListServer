@@ -1,10 +1,10 @@
+/* eslint-disable no-process-env */
+/* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./api.routes');
-/* eslint-disable no-process-env */
-const port = process.env.PORT || 3000;
-/* eslint-enable no-process-env */
+const port = process.env.PORT || 8082;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,7 +14,6 @@ app.use('/api', routes);
 
 // route not found
 app.use((req, res) => {
-  /* eslint-disable no-console */
   console.log(`route not found for ${req.url}`);
   res.status(404).send('Sorry cant find that!');
 });
@@ -31,5 +30,6 @@ app.use((err, req, res) => {
 
 app.listen(port, () => {
   console.log('Starting application on port %d', port);
-  /* eslint-enable no-console */
 });
+/* eslint-enable no-console */
+/* eslint-enable no-process-env */

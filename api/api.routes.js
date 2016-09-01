@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const controller = require('./api.controller');
 
 router.route('/')
-  .get(controller.get);
+  .get((req, res) => {
+    res.send('api app');
+  });
 
 module.exports = router;

@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rethinkdb": "^2.3.2"
+    "rethinkdb": "^2.3.3"
   }
 }
