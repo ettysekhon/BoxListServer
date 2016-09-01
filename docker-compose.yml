@@ -12,38 +12,35 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    networks:
-      - nexgen-network
   api1:
     container_name: api-1
     build: ./api
     ports:
       - "8082"
-    networks:
-      - nexgen-network
   api2:
     container_name: api-2
     build: ./api
     ports:
       - "8082"
-    networks:
-      - nexgen-network
   api3:
     container_name: api-3
     build: ./api
     ports:
       - "8082"
-    networks:
-      - nexgen-network
   web:
     container_name: web
     build: ./web
     ports:
       - "8082"
-    networks:
-      - nexgen-network
-  rdb:
-    container_name: rdb
+  dbseeder:
+    container_name: dbseeder
+    depends_on:
+      - db
+    build:
+      context: ./dbseeder
+      dockerfile: ./Dockerfile
+  db:
+    container_name: db
     image: rethinkdb
     ports:
       - "8080"
@@ -51,9 +48,3 @@ services:
       - "29015"
     volumes:
       - ./data:/data
-    networks:
-      - nexgen-network
-
-networks:
-  nexgen-network:
-    driver: bridge
