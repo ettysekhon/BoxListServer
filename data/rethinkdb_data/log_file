@@ -140,3 +140,93 @@
 2016-09-01T19:59:23.636484358 2.397428s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: This server is Raft leader for term 4. Latest log index is 9.
 2016-09-01T19:59:23.709453770 2.470397s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: Starting a new Raft election for term 4.
 2016-09-01T19:59:23.711840801 2.472784s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: This server is Raft leader for term 4. Latest log index is 9.
+2016-09-02T08:39:46.589211549 7166.920041s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2016-09-02T08:39:46.590332902 7166.921158s notice: Shutting down client connections...
+2016-09-02T08:39:46.757409791 7167.088235s notice: All client connections closed.
+2016-09-02T08:39:46.757420278 7167.088245s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-09-02T08:39:46.977616654 7167.308442s notice: Storage engine shut down.
+2016-09-03T13:16:33.048351291 0.239223s notice: Running rethinkdb 2.3.5~0jessie (GCC 4.9.2)...
+2016-09-03T13:16:33.073012792 0.263879s notice: Running on Linux 4.4.14-moby x86_64
+2016-09-03T13:16:33.073564625 0.264427s notice: Loading data from directory /data/rethinkdb_data
+2016-09-03T13:16:33.199291607 0.390156s info: Automatically using cache size of 356 MB
+2016-09-03T13:16:33.212772218 0.403635s notice: Listening for intracluster connections on port 29015
+2016-09-03T13:16:33.636611785 0.827474s notice: Listening for client driver connections on port 28015
+2016-09-03T13:16:33.643422156 0.834286s notice: Listening for administrative HTTP connections on port 8080
+2016-09-03T13:16:33.707946890 0.898810s notice: Listening on cluster addresses: 127.0.0.1, 172.23.0.3, ::1, fe80::42:acff:fe17:3%21
+2016-09-03T13:16:33.718306572 0.909170s notice: Listening on driver addresses: 127.0.0.1, 172.23.0.3, ::1, fe80::42:acff:fe17:3%21
+2016-09-03T13:16:33.728001058 0.918864s notice: Listening on http addresses: 127.0.0.1, 172.23.0.3, ::1, fe80::42:acff:fe17:3%21
+2016-09-03T13:16:33.728084957 0.918947s notice: Server ready, "f99a58a6bd23_39y" ac8692d5-fd64-4461-b977-6fc65478e4d7
+2016-09-03T13:16:34.459945736 1.650808s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: Starting a new Raft election for term 5.
+2016-09-03T13:16:34.461057193 1.651920s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:16:34.725894386 1.916757s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: Starting a new Raft election for term 5.
+2016-09-03T13:16:34.729584926 1.920447s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:16:34.764144667 1.955007s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: Starting a new Raft election for term 5.
+2016-09-03T13:16:34.769103375 1.959966s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:16:34.892543221 2.083406s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: Starting a new Raft election for term 5.
+2016-09-03T13:16:34.894434136 2.085302s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:16:35.174080135 2.364943s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: Starting a new Raft election for term 5.
+2016-09-03T13:16:35.176566231 2.367429s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:16:35.282104806 2.472970s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: Starting a new Raft election for term 5.
+2016-09-03T13:16:35.284356286 2.475222s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: This server is Raft leader for term 5. Latest log index is 12.
+2016-09-03T13:34:27.267178262 1074.458041s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2016-09-03T13:34:27.267321988 1074.458185s notice: Shutting down client connections...
+2016-09-03T13:34:27.267396997 1074.458259s notice: All client connections closed.
+2016-09-03T13:34:27.267403988 1074.458266s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-09-03T13:34:27.350667410 1074.541532s notice: Storage engine shut down.
+2016-09-03T13:34:32.040883095 0.109106s notice: Running rethinkdb 2.3.5~0jessie (GCC 4.9.2)...
+2016-09-03T13:34:32.044280084 0.112502s notice: Running on Linux 4.4.14-moby x86_64
+2016-09-03T13:34:32.044641247 0.112861s notice: Loading data from directory /data/rethinkdb_data
+2016-09-03T13:34:32.080717681 0.148939s info: Automatically using cache size of 354 MB
+2016-09-03T13:34:32.104918989 0.173139s notice: Listening for intracluster connections on port 29015
+2016-09-03T13:34:32.296306443 0.364527s notice: Listening for client driver connections on port 28015
+2016-09-03T13:34:32.296480932 0.364701s notice: Listening for administrative HTTP connections on port 8080
+2016-09-03T13:34:32.328266560 0.396487s notice: Listening on cluster addresses: 127.0.0.1, 172.23.0.6, ::1, fe80::42:acff:fe17:6%43
+2016-09-03T13:34:32.337680965 0.405901s notice: Listening on driver addresses: 127.0.0.1, 172.23.0.6, ::1, fe80::42:acff:fe17:6%43
+2016-09-03T13:34:32.345176693 0.413397s notice: Listening on http addresses: 127.0.0.1, 172.23.0.6, ::1, fe80::42:acff:fe17:6%43
+2016-09-03T13:34:32.345196668 0.413416s notice: Server ready, "f99a58a6bd23_39y" ac8692d5-fd64-4461-b977-6fc65478e4d7
+2016-09-03T13:34:33.264698847 1.332919s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.265777241 1.333997s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:33.323515657 1.391736s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.324556598 1.392777s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:33.530278002 1.598498s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.531844306 1.600064s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:33.627400450 1.695620s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.628641747 1.696862s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:33.870975039 1.939196s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.872187371 1.940408s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:33.912177869 1.980398s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: Starting a new Raft election for term 6.
+2016-09-03T13:34:33.919572119 1.987793s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: This server is Raft leader for term 6. Latest log index is 15.
+2016-09-03T13:34:39.671456410 7.739678s warn: Problem when checking for new versions of RethinkDB: HTTP request to update.rethinkdb.com failed.
+2016-09-03T13:35:36.041873212 64.110094s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2016-09-03T13:35:36.041978585 64.110198s notice: Shutting down client connections...
+2016-09-03T13:35:36.042129402 64.110350s notice: All client connections closed.
+2016-09-03T13:35:36.042138791 64.110359s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-09-03T13:35:36.104599223 64.172820s notice: Storage engine shut down.
+2016-09-03T13:37:23.719853139 0.079662s notice: Running rethinkdb 2.3.5~0jessie (GCC 4.9.2)...
+2016-09-03T13:37:23.730588251 0.090395s notice: Running on Linux 4.4.14-moby x86_64
+2016-09-03T13:37:23.731179835 0.090986s notice: Loading data from directory /data/rethinkdb_data
+2016-09-03T13:37:23.763701987 0.123509s info: Automatically using cache size of 290 MB
+2016-09-03T13:37:23.774225455 0.134031s notice: Listening for intracluster connections on port 29015
+2016-09-03T13:37:23.993164165 0.352969s notice: Listening for client driver connections on port 28015
+2016-09-03T13:37:23.993397682 0.353203s notice: Listening for administrative HTTP connections on port 8080
+2016-09-03T13:37:24.098107995 0.457913s notice: Listening on cluster addresses: 127.0.0.1, 172.23.0.2, ::1, fe80::42:acff:fe17:2%51
+2016-09-03T13:37:24.120071022 0.479877s notice: Listening on driver addresses: 127.0.0.1, 172.23.0.2, ::1, fe80::42:acff:fe17:2%51
+2016-09-03T13:37:24.126226675 0.486032s notice: Listening on http addresses: 127.0.0.1, 172.23.0.2, ::1, fe80::42:acff:fe17:2%51
+2016-09-03T13:37:24.126245751 0.486051s notice: Server ready, "f99a58a6bd23_39y" ac8692d5-fd64-4461-b977-6fc65478e4d7
+2016-09-03T13:37:24.860972118 1.220778s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: Starting a new Raft election for term 7.
+2016-09-03T13:37:24.863138897 1.222944s info: Table 5b331cf1-e387-4562-805e-5ce681929b1f: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:37:25.077658653 1.437469s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: Starting a new Raft election for term 7.
+2016-09-03T13:37:25.080793959 1.440599s info: Table af67baa5-fa0b-4e9a-996a-d21ffe4c62c1: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:37:25.240701390 1.600509s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: Starting a new Raft election for term 7.
+2016-09-03T13:37:25.243397928 1.603206s info: Table 5ee7e2f1-91e5-468d-9258-c1ff4cc44947: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:37:25.320770716 1.680579s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: Starting a new Raft election for term 7.
+2016-09-03T13:37:25.322974549 1.682783s info: Table 2bfc7b62-4d88-4a0d-9f78-d2d7de5c19f5: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:37:25.365538252 1.725344s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: Starting a new Raft election for term 7.
+2016-09-03T13:37:25.367174073 1.726980s info: Table 5eddf519-8b0b-400e-a520-d0df2c8945d4: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:37:25.655362499 2.015170s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: Starting a new Raft election for term 7.
+2016-09-03T13:37:25.657609080 2.017418s info: Table ebd8b3cc-3b58-4b5d-b68d-6db46c0bb9cc: This server is Raft leader for term 7. Latest log index is 18.
+2016-09-03T13:50:58.037823318 814.397635s notice: Server got SIGTERM from pid 0, uid 0; shutting down...
+2016-09-03T13:50:58.038086999 814.397906s notice: Shutting down client connections...
+2016-09-03T13:50:58.038237417 814.398043s notice: All client connections closed.
+2016-09-03T13:50:58.038245407 814.398051s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2016-09-03T13:50:58.113433041 814.473239s notice: Storage engine shut down.

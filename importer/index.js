@@ -5,7 +5,6 @@ const r = require('rethinkdb');
 const path = require('path');
 const _ = require('lodash');
 const config = require('./config');
-const processedFiles = {};
 
 const findLatestFile = (match, dirpath) => {
   const matchedFiles = fs.readdirSync(dirpath);
@@ -19,11 +18,11 @@ const findLatestFile = (match, dirpath) => {
   return latestFile;
 };
 
-const addProcessedFile = (file) => {
+const addProcessedFile = (processedFiles, file) => {
   processedFiles[file] = true;
 };
 
-const isProcessed = (file) => {
+const isProcessed = (processedFiles, file) => {
   return processedFiles[file] || false;
 };
 
@@ -67,10 +66,10 @@ const importData = (fullPathFile) => {
   });
 };
 
-const importLatestFile = () => {
+const importLatestFile = (processedFiles) => {
   const dir = path.join(__dirname, 'files');
   const latestFile = findLatestFile('products', dir);
-  if (!latestFile || isProcessed(latestFile)) {
+  if (!latestFile || isProcessed(processedFiles, latestFile)) {
     return console.log(`no file found in dir ${dir}`);
   }
   const fullPathFile = `${dir}/${latestFile}`;
@@ -86,17 +85,22 @@ const importLatestFile = () => {
     importData(fullPathFile)
       .then(() => {
         console.log('successfully imported data');
-        addProcessedFile(latestFile);
+        addProcessedFile(processedFiles, latestFile);
       })
       .catch(() => {
         console.log('error importing data');
-        addProcessedFile(latestFile);
+        addProcessedFile(processedFiles, latestFile);
       });
   });
   return null;
 };
 
-setInterval(() => {
-  importLatestFile();
-}, 10000);
+const run = () => {
+  const processedFiles = {};
+  setInterval(() => {
+    importLatestFile(processedFiles);
+  }, 10000);
+};
+
+run();
 /* eslint-enable no-console */
