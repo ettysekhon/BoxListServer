@@ -27,6 +27,10 @@ const allowCrossDomain = (req, res, next) => {
   }
 };
 
+// see http://expressjs.com/en/guide/behind-proxies.html
+app.set('trust proxy', true);
+app.set('trust proxy', 'loopback');
+
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

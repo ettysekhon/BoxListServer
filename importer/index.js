@@ -70,7 +70,7 @@ const importLatestFile = (processedFiles) => {
   const dir = path.join(__dirname, 'files');
   const latestFile = findLatestFile('products', dir);
   if (!latestFile || isProcessed(processedFiles, latestFile)) {
-    return console.log(`no file found in dir ${dir}`);
+    return;
   }
   const fullPathFile = `${dir}/${latestFile}`;
   console.log('fullPathFile', fullPathFile);
@@ -92,7 +92,6 @@ const importLatestFile = (processedFiles) => {
         addProcessedFile(processedFiles, latestFile);
       });
   });
-  return null;
 };
 
 const run = () => {
