@@ -54,8 +54,13 @@ app.use((err, req, res) => {
   res.status(500).send('Something broke!');
 });
 
-app.listen(port, () => {
-  console.log('Starting application on port %d', port);
+app.listen(port, (error) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.info(`Starting application on port ${port}`);
+  }
 });
+
 /* eslint-enable no-console */
 /* eslint-enable no-process-env */
