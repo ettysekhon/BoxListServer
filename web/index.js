@@ -4,10 +4,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./api.routes');
+const path = require('path');
 const port = process.env.PORT || 8082;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // setup api routes
 app.use('/', routes);
