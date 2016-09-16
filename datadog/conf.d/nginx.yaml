@@ -6,4 +6,4 @@ instances:
 
     -   nginx_status_url: http://127.0.0.1/nginx_status/
         tags:
-            -   instance:foo
+            -   instance:nginx_boxlist

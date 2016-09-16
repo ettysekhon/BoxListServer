@@ -62,6 +62,12 @@ services:
     build:
       context: ./datadog
       dockerfile: ./Dockerfile
+    links:
+      - api1:api1
+      - api2:api2
+      - api3:api3
+      - web:web
+      - db:db
     ports:
       - "8125:8125"
     environment:
@@ -70,4 +76,3 @@ services:
      - /var/run/docker.sock:/var/run/docker.sock
      - /proc/:/host/proc/:ro
      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
-     - /opt/dd-agent-conf.d:/conf.d:ro
