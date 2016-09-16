@@ -59,6 +59,7 @@ services:
       - ./files:/var/worker/files
   datadog:
     container_name: datadog
+    privileged: true
     build:
       context: ./datadog
       dockerfile: ./Dockerfile
@@ -68,6 +69,8 @@ services:
       - api3:api3
       - web:web
       - db:db
+    ports:
+      - "8125:8125"
     environment:
      - API_KEY=9a890044eb035102724a01565e964182
     volumes:
