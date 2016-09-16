@@ -11,5 +11,5 @@ instances:
   #
 
   - nginx_status_url: http://nginx/nginx_status/
-  #   tags:
-  #     - instance:boxlist
+    tags:
+      - instance:nginx_boxlist
