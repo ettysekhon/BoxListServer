@@ -1,1 +1,1 @@
-FROM datadog/docker-dd-agent:latest
+FROM datadog/docker-dd-agent:latest-alpine

@@ -62,6 +62,12 @@ services:
     build:
       context: ./datadog
       dockerfile: ./Dockerfile
+    links:
+      - api1:api1
+      - api2:api2
+      - api3:api3
+      - web:web
+      - db:db
     environment:
      - API_KEY=9a890044eb035102724a01565e964182
     volumes:
