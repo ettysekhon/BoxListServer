@@ -59,16 +59,9 @@ services:
       - ./files:/var/worker/files
   datadog:
     container_name: datadog
-    privileged: true
     build:
       context: ./datadog
       dockerfile: ./Dockerfile
-    links:
-      - api1:api1
-      - api2:api2
-      - api3:api3
-      - web:web
-      - db:db
     ports:
       - "8125:8125"
     environment:
