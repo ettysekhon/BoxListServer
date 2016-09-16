@@ -68,12 +68,12 @@ services:
       - api3:api3
       - web:web
       - db:db
+      - nginx:nginx
     ports:
       - "8125:8125"
     environment:
-     - API_KEY=9a890044eb035102724a01565e964182
+      - API_KEY=9a890044eb035102724a01565e964182
     volumes:
-     - /var/run/docker.sock:/var/run/docker.sock
-     - /proc/:/host/proc/:ro
-     - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
-     - /etc/dd-agent/conf.d:/conf.d
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
