@@ -10,7 +10,6 @@
   3. throttling (count)
   4. throttling (time)
 
-
 # NGINX metrics to report on:
 
 ## Basic activity metrics
